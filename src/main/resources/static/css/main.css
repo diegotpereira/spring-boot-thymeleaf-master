@@ -12,3 +12,8 @@ a:active {
     color: purple;
     text-decoration: none;
 }
+
+.pagination {
+    display: block;
+    text-align: center;
+}

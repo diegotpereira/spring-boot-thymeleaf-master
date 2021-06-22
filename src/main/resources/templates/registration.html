@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header>
+    <div th:replace="/fragments/header :: header" />
+</header>
+<body>
+    <div th:replace="/fragments/header :: navbar" />
+
+    <div class="container">
+        <!--Mostrar esta mensagem informativa apenas se registrado com sucesso-->
+        <div class="alert alert-info"></div>
+
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-xs-12 col-sm-8 col-sm-6 col-sm-offset-2 col-md-offset-3">
+                <form autocomplete="off" action="#" method="POST" role="form">
+                    <div class="form-group">
+                        <label class="alert alert-danger"></label>
+                        <input type="text" placeholder="Digite o nome" class="form-control input-lg"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="alert alert-danger"></label>
+                        <input type="text" placeholder="Digite o sobrenome" class="form-control input-lg"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="alert alert-danger"></label>
+                        <input type="text" placeholder="Digite o email" class="form-control input-lg"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="alert alert-danger"></label>
+                        <input type="password" placeholder="Digite a senha" class="form-control -input-lg"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="alert alert-danger"></label>
+                        <input type="text" placeholder="Digite o usuário" class="form-control input-lg"/>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3" style="float: none; margin: 0 auto;">
+                            <input type="submit" class="btn btn-primary btn-block" value="submit"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div th:replace="/fragments/footer :: footer"/>
+</body>
+</html>

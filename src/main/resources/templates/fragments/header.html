@@ -2,9 +2,7 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <div th:fragment="header">
-    <title>Header</title>
-      
-              
+        <title>Header</title>
         <link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css} "/>      
         <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
@@ -12,40 +10,44 @@
         <link rel="stylesheet" th:href="@{/css/main.css}"
               href="../../static/css/main.css"/>
     </div>
-    <body>
-        <!--isso é o header-->
-        <div th:fragment="navbar">
-            <nav class="navbar navbar-inverse">
-                <div class="container">
+</head>    
+<body>
+    <!--isso é o header-->
+    <div th:fragment="navbar">
+        <nav class="navbar navbar-inverse">
+            <div class="container">
 
-                    <div class="navbar-header">
-                        <a class="navbar-brand" th:href="@{/home}">Loja</a>
-                    </div>
-                 
-                    <div id="navbar" class="collapse navbar-collapse navbar-right">
-                        <!--mostrar carrinho de compras apenas se o usuário ainda não estiver autenticado-->
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a>Carrinho de Compras</a></li>
-                        </ul>
-                        
-                        <!--mostrar o registro apenas se o usuário ainda não estiver autenticado-->
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a>Registrar</a></li>
-                        </ul>
-
-                        <!--mostrar login apenas se o usuário ainda não estiver autenticado-->
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a>Login</a></li>
-                        </ul>
-
-                        <!--mostrar sair somente se o usuário estiver autenticado-->
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a>Sair</a></li>
-                        </ul>
-                    </div>
-
+                <div class="navbar-header">
+                    <a class="navbar-brand" th:href="@{/home}">Loja</a>
+                    <a class="navbar-brand" th:href="@{/carrinhoDeCompras}">Carrinho de Compras</a>
                 </div>
-            </nav>
-        </div>
-    </body>
-</head>
+                
+                <div id="navbar" class="collapse navbar-collapse navbar-right">
+                    <!--mostrar carrinho de compras apenas se o usuário ainda não estiver autenticado-->
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a th:href="@{/carrinhoDeCompras}">Carrinho de Compras</a>
+                        </li>
+                    </ul>
+                    
+                    <!--mostrar o registro apenas se o usuário ainda não estiver autenticado-->
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a>Registrar</a></li>
+                    </ul>
+
+                    <!--mostrar login apenas se o usuário ainda não estiver autenticado-->
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a>Login</a></li>
+                    </ul>
+
+                    <!--mostrar sair somente se o usuário estiver autenticado-->
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a>Sair</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

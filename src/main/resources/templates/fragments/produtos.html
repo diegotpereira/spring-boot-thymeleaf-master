@@ -3,16 +3,22 @@
 <head>
 
 </head>
-<div th:fragment="produtos">
-    <div class="panel-default well">
-        <div class="panel-heading">
-            <h1></h1>
-        </div>
-        <h3 class="panel-body">Descrição</h3>
-        <div class="row panel-footer">
-            <div class="col-md-2">Preço:</div>
-            <div class="col-md-9">Em estoque: </div>
-
+<body>
+    <div th:fragment="produtos">
+        <div class="panel-default well">
+            <div class="panel-heading">
+                <h1></h1>
+            </div>
+            <h3 class="panel-body">Descrição</h3>
+            <div class="row panel-footer">
+                <div class="col-md-2">Preço:</div>
+                <div class="col-md-9">Em estoque: </div>
+                <a class="col-md-1">
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                </a>
+            </div>
+            <br></br>
         </div>
     </div>
-</div>
+</body>
+</html>

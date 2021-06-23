@@ -11,15 +11,15 @@
     <div class="container">
         <div class="row" style="margin-top: 20px;">
             <div class="col-xs-12 col-md-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-                <form method="POST">
+                <form th:action="@{/login}" method="POST">
                     <fieldset>
                         <div>
-                            <div class="alert alert-danger">
+                            <div th:if="${param.error}" class="alert alert-danger">
                                 Nome de usário ou senha inválidos.
                             </div>
                         </div>
 
-                        <div>
+                        <div th:if="${param.logout}">
                             <div class="alert alert-info">
                                 Você foi desconectado.
                             </div>

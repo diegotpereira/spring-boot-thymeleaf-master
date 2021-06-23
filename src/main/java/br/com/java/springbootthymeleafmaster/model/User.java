@@ -3,11 +3,10 @@ package br.com.java.springbootthymeleafmaster.model;
 import java.util.Collection;
 
 import javax.persistence.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
@@ -22,23 +21,24 @@ public class User {
     private Long id;
 
     @Column(name = "email", unique = true, nullable = false)
-    @Email(message = "*Por favor forneça um email válido")
-    @NotEmpty(message = "*Por favor, forneça um e-mail")
+
     private String email;
 
     @Column(name = "password", nullable = false)
-    @Length(min = 5, message = "Por favor forneça uma senha")
+
     @JsonIgnore
     private String password;
 
     @Column(name = "username", nullable = false, unique = true)
-    @Length(min = 5, message = "*Seu nome de usuário deve ter pelo menos 5 caracteres")
     @NotEmpty(message = "*Por favor forneça seu nome de usuário")
-    private String name;
+    private String username;
 
     @Column(name = "last_name")
-    @NotEmpty(message = "*Por favor forneça seu sobrenome")
     private String lastName;
+
+    @Column(name = "name")
+    @NotEmpty(message = "*Please provide your name")
+    private String name;
 
     @Column(name = "active", nullable = false)
     private int active;

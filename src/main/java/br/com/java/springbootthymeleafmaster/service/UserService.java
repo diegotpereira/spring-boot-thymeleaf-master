@@ -1,5 +1,9 @@
 package br.com.java.springbootthymeleafmaster.service;
 
+import java.util.Optional;
+
+import br.com.java.springbootthymeleafmaster.model.User;
+
 public interface UserService {
 
     Optional<User> findByUsername(String username);

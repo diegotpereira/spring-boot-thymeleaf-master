@@ -9,19 +9,19 @@
 
         <div class="container">
             <h1 class="jumbotron">
-                <span></span>Carrinho de Compras
+                <span sec:authentication="name"></span>Carrinho de Compras
             </h1>
 
-            <div class="alert alert-info"></div>
+            <div class="alert alert-info" th:if="${mensagemDeFaltaDeEstoque}" th:utext="{mensagemDeFaltaDeEstoque}"></div>
 
-            <div class="panel-default well">
+            <div class="panel-default well" th:each="produto : ${produtos.entrySet()}">
                 <div class="panel-heading">
-                    <h1><a>Titulo</a></h1>
-                    <h3>Descrição</h3>
+                    <h1><a th:text="${produto.getKey().nome}" th:href="@{'/produto/' + ${produto.getKey().id}}">Titulo</a></h1>
+                    <h3 th:text="${produto.getKey().descricao}">Descrição</h3>
                 </div>    
                 <div class="row panel-body">
-                    <div class="col-md-2">Preço: </div>
-                    <div class="col-md-9">Quantidade:</div>
+                    <div class="col-md-2" th:inline="text">Preço: [[${produto.getKey().preco}]]</div>
+                    <div class="col-md-9" th:inline="text">Quantidade: {{${produto.getValue()}]]</div>
                     <a class="col-md-1">
                         <button type="button" class="btn btn-primary">
                             Remover
@@ -32,7 +32,7 @@
             </div>
     
             <div class="row panel-body">
-                <h2 class="col-md-11"></h2>
+                <h2 class="col-md-11" th:inline="text">Total: [[${total}]]</h2>
                 <a class="col-md-1">
                     <button type="button" class="btn btn-danger">Confirmar</button>
                 </a>

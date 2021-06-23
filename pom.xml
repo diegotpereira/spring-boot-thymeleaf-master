@@ -41,7 +41,6 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-
 		
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 		<dependency>

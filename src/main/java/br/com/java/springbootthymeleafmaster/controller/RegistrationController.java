@@ -1,6 +1,6 @@
 package br.com.java.springbootthymeleafmaster.controller;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.java.springbootthymeleafmaster.model.User;
 import br.com.java.springbootthymeleafmaster.service.UserService;
+import javax.validation.Valid;
 
 @Controller
 public class RegistrationController {

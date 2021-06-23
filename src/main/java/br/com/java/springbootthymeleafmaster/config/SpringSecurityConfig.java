@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -43,7 +42,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 
         http.csrf().disable()
             .authorizeRequests()
+            .antMatchers("/login").permitAll()
             .antMatchers("/home", "/registration", "/error").permitAll()
+            .antMatchers("/**/*.js", "/**/*.css").permitAll()
             .anyRequest().authenticated()
             .and()
             .formLogin()
@@ -56,11 +57,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
             .and()
             .exceptionHandling().accessDeniedHandler(accessDeniedHandler)
             .and().headers().frameOptions().disable();
-    }
-    
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/src/main/resources/static/js/**");
     }
 
     @Autowired

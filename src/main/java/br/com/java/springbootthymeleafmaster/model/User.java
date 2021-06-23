@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import javax.persistence.*;
 
-import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -30,14 +29,14 @@ public class User {
     private String password;
 
     @Column(name = "username", nullable = false, unique = true)
-    @NotEmpty(message = "*Por favor forneça seu nome de usuário")
+    
     private String username;
 
     @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "name")
-    @NotEmpty(message = "*Please provide your name")
+    
     private String name;
 
     @Column(name = "active", nullable = false)

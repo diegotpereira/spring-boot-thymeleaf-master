@@ -22,8 +22,8 @@
                 <div class="row panel-body">
                     <div class="col-md-2" th:inline="text">Preço: [[${produto.getKey().preco}]]</div>
                     <div class="col-md-9" th:inline="text">Quantidade: {{${produto.getValue()}]]</div>
-                    <a class="col-md-1">
-                        <button type="button" class="btn btn-primary">
+                    <a class="col-md-1" th:href="@{'/carrinhoDeCompras/removerProduto/{id}' (id=${produto.getKey().id})}">
+                        <button type="button" class="btn btn-primary" th:text="Excluir">
                             Remover
                         </button>
                     </a>

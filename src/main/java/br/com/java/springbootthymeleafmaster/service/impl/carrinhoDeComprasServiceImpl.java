@@ -65,7 +65,7 @@ public class carrinhoDeComprasServiceImpl implements carrinhoDeComprasService{
     @Override
     public void verificar() throws produtoSemEstoque {
         // TODO Auto-generated method stub
-        Produto produto;
+      /*  Produto produto;
 
         for(Map.Entry<Produto, Integer> entry : produtos.entrySet()){
             produto = produtoRepository.findOne(entry.getKey().getId());
@@ -78,9 +78,9 @@ public class carrinhoDeComprasServiceImpl implements carrinhoDeComprasService{
 
             produtoRepository.save(produtos.keySet());
             produtoRepository.flush();
-            produtos.clear();
-        }
-    }
+            produtos.clear(); */
+        } 
+    
 
     @Override
     public BigDecimal getTotal() {

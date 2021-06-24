@@ -32,7 +32,7 @@ public class CarrinhoDeComprasController {
     }
 
     @GetMapping("/carrinhoDeCompras/addProduto/{produtoId}")
-    public ModelAndView addProdutoNoCarrinho(@PathVariable("produto_id") Long produtoId){
+    public ModelAndView addProdutoNoCarrinho(@PathVariable("produtoId") Long produtoId){
         produtoService.findById(produtoId).ifPresent(carrinhoDeComprasService::addProduto);
         return carrinhoDeCompras();
     }

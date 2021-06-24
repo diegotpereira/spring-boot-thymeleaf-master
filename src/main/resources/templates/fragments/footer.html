@@ -10,11 +10,12 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <span sec:authorize="isAuthenticated()">
-                    | Logged user: <span sec:authentication="name">
+                    | Usuário logado: <span sec:authentication="name"></span> |
+                    Funções: <span sec:authentication="principal.authorities"></span> |
                         <a th:href="@{/logout}">Sair</a>
                     </span>
                     <div>
-                        <p class="text-center"&copy;2021 DTP tecnologias></p>
+                        <p class="text-center"&copy; 2021 DTP tecnologias></p>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,7 @@
                 <div class="col-md-2" th:inline="text">Preço: [[${produto.preco}]]</div>
                 <div class="col-md-9" th:inline="text">Em estoque: [[${produto.quantidade}]]</div>
                 <a class="col-md-1" th:href="@{'/carrinhoDeCompras/addProduto/{id}' (id=${produto.id})}" sec:authorize="isAuthenticated()" th:if="${produto.quantidade}>0">
-                    <button type="button" class="btn btn-primary">Comprar</button>
+                    <button type="button" class="btn btn-primary" th:text="Comprar">Comprar</button>
                 </a>
             </div>
             <br></br>

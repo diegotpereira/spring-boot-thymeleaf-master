@@ -21,7 +21,7 @@
                 </div>    
                 <div class="row panel-body">
                     <div class="col-md-2" th:inline="text">Preço: [[${produto.getKey().preco}]]</div>
-                    <div class="col-md-9" th:inline="text">Quantidade: {{${produto.getValue()}]]</div>
+                    <div class="col-md-9" th:inline="text">Quantidade: [[${produto.getValue()}]]</div>
                     <a class="col-md-1" th:href="@{'/carrinhoDeCompras/removerProduto/{id}' (id=${produto.getKey().id})}">
                         <button type="button" class="btn btn-primary" th:text="Excluir">
                             Remover
@@ -33,8 +33,8 @@
     
             <div class="row panel-body">
                 <h2 class="col-md-11" th:inline="text">Total: [[${total}]]</h2>
-                <a class="col-md-1">
-                    <button type="button" class="btn btn-danger">Confirmar</button>
+                <a class="col-md-1" th:href="@{'/corrinhoDeCompras/verificar'}" >
+                    <button type="button" class="btn btn-danger" th:text="Verificar">Confirmar</button>
                 </a>
             </div>
         </div>    
